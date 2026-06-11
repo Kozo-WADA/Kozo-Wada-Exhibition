@@ -192,6 +192,17 @@ section{padding:104px 0}
 .sub-h{font-family:"Noto Serif JP",serif; font-size:1.05rem; letter-spacing:.12em;
   margin:54px 0 18px; padding-bottom:10px; border-bottom:1px solid var(--line)}
 
+/* artist profile */
+.profile{background:var(--paper2); border-top:1px solid var(--line)}
+.profile .bio-list{list-style:none; max-width:520px; border-top:1px solid var(--line)}
+.profile .bio{display:grid; grid-template-columns:88px 1fr; gap:20px; align-items:baseline;
+  padding:16px 0; border-bottom:1px solid var(--line2); break-inside:avoid}
+.profile .bio-y{font-family:"Cormorant Garamond",serif; font-size:1.15rem; letter-spacing:.04em; color:var(--ink)}
+.profile .bio-v{font-size:1rem; letter-spacing:.04em; color:var(--soft)}
+@media(max-width:560px){
+  .profile .bio{grid-template-columns:70px 1fr; gap:14px}
+}
+
 /* catalogue */
 .cat{background:var(--paper2); border-top:1px solid var(--line)}
 .cat-grid{display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:end}
@@ -273,6 +284,7 @@ footer .fine{margin-top:34px; font-size:.7rem; color:var(--ash); letter-spacing:
     <a href="#memorial">偲ぶ会</a>
     <a href="#video">映像</a>
     <a href="#statement">作家のことば</a>
+    <a href="#profile">プロフィール</a>
     <a href="#catalogue">画集</a>
     <a href="#ask">ご協力のお願い</a>
   </div>
@@ -369,6 +381,20 @@ footer .fine{margin-top:34px; font-size:.7rem; color:var(--ash); letter-spacing:
     <p class="moreau">ギュスターヴ・モローがドガに向かって「何故、目で見えるものしか描かないのか？」と問いかけた言葉は、深い含蓄に溢れていると思っています。</p>
     <p>基礎としての素描は具象表現の為だけにあるのでは無く、抽象表現により多くの可能性を与えてくれていると感じています。豊かで深い表現を求め抽象平面造型の可能性を、「描く」というメチエで追求し続けていきたいと決意しています。</p>
     <div class="sig">和田幸三</div>
+  </div>
+</section>        
+        
+<section class="profile" id="profile">
+  <div class="wrap">
+    <h2 class="h-sec" style="margin-bottom:40px">作家プロフィール</h2>
+    <ul class="bio-list">
+      <li class="bio reveal"><span class="bio-y">1948</span><span class="bio-v">横浜生まれ</span></li>
+      <li class="bio reveal"><span class="bio-y">1961</span><span class="bio-v">聖光学院 入学</span></li>
+      <li class="bio reveal"><span class="bio-y">1968</span><span class="bio-v">武蔵野美術大学 油画科 入学</span></li>
+      <li class="bio reveal"><span class="bio-y">1975</span><span class="bio-v">聖光学院 美術科講師</span></li>
+      <li class="bio reveal"><span class="bio-y">2014</span><span class="bio-v">離職</span></li>
+      <li class="bio reveal"><span class="bio-y">2025</span><span class="bio-v">6月 逝去</span></li>
+    </ul>
   </div>
 </section>
 
