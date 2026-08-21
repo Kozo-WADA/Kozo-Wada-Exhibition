@@ -503,11 +503,10 @@ footer .fine{margin-top:34px; font-size:.7rem; color:var(--ash); letter-spacing:
         </figure>
       </div>
       <div class="cta-card">
-        <h4>画集購入ページ</h4>
-        <p class="note">画集の仕様・価格などを8月末に掲載予定です。</p>
         <button class="btn" id="cartBtn" data-ready="true" disabled>
           <span class="lat">SHOPPING CART</span> ／ 準備中
         </button>
+        <p class="note">予約期間：9 月1 日～9 月30 日</p>
       </div>
     </div>
   </div>
@@ -590,7 +589,7 @@ const CART_URL=""; // 例: "https://your-shop.example.com/wada-catalogue"
     b.querySelector('.small');
     b.onclick=()=>{window.open(CART_URL,'_blank')};
     const small=b.parentElement.querySelector('.small'); if(small) small.textContent='NOW ON SALE';
-    const note=b.parentElement.querySelector('.note'); if(note) note.textContent='ご支援に心より感謝申し上げます。';
+    const note=b.parentElement.querySelector('.note'); if(note) note.textContent='予約期間：9 月1 日～9 月30 日';
   }
 })();
 
