@@ -551,10 +551,10 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const SRCS=[...document.querySelectorAll('.art img')].map(i=>i.src);
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
 let cur=0;
-function open(i){cur=i; lb.querySelector('.prev').style.display=''; lb.querySelector('.next').style.display=''; lbImg.src=SRCS[i]; lbCap.textContent=String(i+1).padStart(2,'0')+' / '+String(SRCS.length).padStart(2,'0'); lb.classList.add('open'); document.body.style.overflow='hidden';}
+function openLB(i){cur=i; lb.querySelector('.prev').style.display=''; lb.querySelector('.next').style.display=''; lbImg.src=SRCS[i]; lbCap.textContent=String(i+1).padStart(2,'0')+' / '+String(SRCS.length).padStart(2,'0'); lb.classList.add('open'); document.body.style.overflow='hidden';}
 function close(){lb.classList.remove('open'); document.body.style.overflow='';}
 function step(d){cur=(cur+d+SRCS.length)%SRCS.length; lbImg.src=SRCS[cur]; lbCap.textContent=String(cur+1).padStart(2,'0')+' / '+String(SRCS.length).padStart(2,'0');}
-document.querySelectorAll('.art').forEach((f,idx)=>f.addEventListener('click',()=>open(idx)));
+document.querySelectorAll('.art').forEach((f,idx)=>f.addEventListener('click',()=>openLB(idx)));
 lb.querySelector('.x').onclick=close;
 lb.querySelector('.prev').onclick=e=>{e.stopPropagation();step(-1)};
 lb.querySelector('.next').onclick=e=>{e.stopPropagation();step(1)};
@@ -580,12 +580,12 @@ addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return; if(e.ke
    下の CART_URL に購入ページのURLを入れて data-ready を true にすると
    「準備中」ボタンが有効なリンクボタンに変わります。
 */
-const CART_URL=""; // 例: "https://your-shop.example.com/wada-catalogue"
+const CART_URL="https://kozowada.base.shop/"; // 例: "https://your-shop.example.com/wada-catalogue"
 (function(){
   const b=document.getElementById('cartBtn');
   if(CART_URL){
     b.dataset.ready="true"; b.disabled=false;
-    b.innerHTML='<span class="lat">SHOPPING CART</span> ／ 画集を購入する';
+    b.innerHTML='記念画集購入ページ';
     b.querySelector('.small');
     b.onclick=()=>{window.open(CART_URL,'_blank')};
     const small=b.parentElement.querySelector('.small'); if(small) small.textContent='NOW ON SALE';
