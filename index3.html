@@ -551,10 +551,10 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const SRCS=[...document.querySelectorAll('.art img')].map(i=>i.src);
 const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg'), lbCap=document.getElementById('lbCap');
 let cur=0;
-function open(i){cur=i; lb.querySelector('.prev').style.display=''; lb.querySelector('.next').style.display=''; lbImg.src=SRCS[i]; lbCap.textContent=String(i+1).padStart(2,'0')+' / '+String(SRCS.length).padStart(2,'0'); lb.classList.add('open'); document.body.style.overflow='hidden';}
+function openLB(i){cur=i; lb.querySelector('.prev').style.display=''; lb.querySelector('.next').style.display=''; lbImg.src=SRCS[i]; lbCap.textContent=String(i+1).padStart(2,'0')+' / '+String(SRCS.length).padStart(2,'0'); lb.classList.add('open'); document.body.style.overflow='hidden';}
 function close(){lb.classList.remove('open'); document.body.style.overflow='';}
 function step(d){cur=(cur+d+SRCS.length)%SRCS.length; lbImg.src=SRCS[cur]; lbCap.textContent=String(cur+1).padStart(2,'0')+' / '+String(SRCS.length).padStart(2,'0');}
-document.querySelectorAll('.art').forEach((f,idx)=>f.addEventListener('click',()=>open(idx)));
+document.querySelectorAll('.art').forEach((f,idx)=>f.addEventListener('click',()=>openLB(idx)));
 lb.querySelector('.x').onclick=close;
 lb.querySelector('.prev').onclick=e=>{e.stopPropagation();step(-1)};
 lb.querySelector('.next').onclick=e=>{e.stopPropagation();step(1)};
